@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <PreferenceCategory 
+        android:title="General"
+        android:key="settings_general">
+
+		<SwitchPreference
+		    android:key="enable_underscan"
+		    android:title="Use Underscan"
+		    android:summary="Shrinks the application to fit on 720p screens."
+		    android:defaultValue="true" />
+	</PreferenceCategory>
+    
+    <PreferenceCategory 
+        android:title="Screenshots"
+        android:key="settings_screeshots">
+        
+		<ListPreference
+		    android:key="screenshot_initial_feed"
+		    android:title="Initial Screenshot Feed"
+		    android:summary="Screenshot feed to show when the app is loaded."
+		    android:entries="@array/settings_screenshot_initial_feed_entries"
+		    android:entryValues="@array/settings_screenshot_initial_feed_values"
+		    android:defaultValue="twitter"/>
+	
+		<SwitchPreference
+		    android:key="enable_fx"
+		    android:title="UI Sounds"
+		    android:summary="Play sounds for next/previous screenshot and feed."
+		    android:defaultValue="true" />
+	</PreferenceCategory>
+    
+     <PreferenceCategory 
+        android:title="Music"
+        android:key="settings_music">
+
+   		<SwitchPreference
+		    android:key="play_music"
+		    android:title="Music"
+		    android:summary="Stream music from SoundCloud while viewing Screenshots"
+		    android:defaultValue="true" />
+	
+		<ListPreference
+		    android:key="music_tag"
+		    android:title="SoundCloud Hash Tag"
+		    android:summary="The hash tag used to load a music playlist from SoundCloud."
+		    android:entries="@array/settings_music_tag_entries"
+		    android:entryValues="@array/settings_music_tag_values"
+		    android:defaultValue="soundtracksunday"
+		    android:dependency="play_music"/>
+	</PreferenceCategory>
+			
+</PreferenceScreen>
